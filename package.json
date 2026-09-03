@@ -18,7 +18,7 @@
   },
   "license": "ISC",
   "author": "Chitiz Awasthi",
-  "type": "commonjs",
+  "type": "module",
   "main": "LLM.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
