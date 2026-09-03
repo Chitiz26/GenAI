@@ -1,0 +1,29 @@
+{
+  "name": "genai",
+  "version": "1.0.0",
+  "description": "A GenAI application built with Node.js",
+  "keywords": [
+    "genai",
+    "nodejs",
+    "llm",
+    "artificial-intelligence"
+  ],
+  "homepage": "https://github.com/Chitiz26/GenAI#readme",
+  "bugs": {
+    "url": "https://github.com/Chitiz26/GenAI/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chitiz26/GenAI.git"
+  },
+  "license": "ISC",
+  "author": "Chitiz Awasthi",
+  "type": "commonjs",
+  "main": "LLM.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@google/genai": "^2.21.0"
+  }
+}
