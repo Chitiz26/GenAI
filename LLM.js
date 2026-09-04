@@ -28,48 +28,31 @@
 // }
 
 // main();
+// 
 import { GoogleGenAI } from "@google/genai";
+import readLineSync from "readline-sync";
 
 const ai = new GoogleGenAI({
-  apiKey: process.env.GEMINI_API_KEY
+    apiKey: process.env.GEMINI_API_KEY
 });
 
+const History = [];
+
+async function Chatting(userProblem) 
+{
+   const interaction = await ai.interactions.create({
+        model: "gemini-3.6-flash",
+        input: userProblem
+    });
+
+    console.log(interaction.output_text);   
+}
+
 async function main() {
-  const interaction = await ai.interactions.create({
-    model: "gemini-3.8-flash",
+    const userProblem = readLineSync.question("Ask Below ");
 
-    input: [
-      {
-        type: "user_input",
-        content: [
-          {
-            type: "text",
-            text: "My name is chitiz."
-          }
-        ]
-      },
-      {
-        type: "model_output",
-        content: [
-          {
-            type: "text",
-            text: "Hello Chitiz! Nice to meet you. How can I help you today?"
-          }
-        ]
-      },
-      {
-        type: "user_input",
-        content: [
-          {
-            type: "text",
-            text: "What is my name?"
-          }
-        ]
-      }
-    ]
-  });
-
-  console.log(interaction.output_text);
+    await Chatting(userProblem);
 }
 
 main();
+
